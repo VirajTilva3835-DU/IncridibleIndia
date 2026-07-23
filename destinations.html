@@ -1,0 +1,624 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Incredible India — Tourist Guide</title>
+  <link rel="stylesheet" href="CSS/style.css">
+</head>
+<body>
+  <div class="site container">
+    <header>
+      <a class="brand" href="index.html">
+        <div class="logo"><img src="Images/Logo/in.png"></div>
+        <div>
+          <div class="site-title">Incredible India</div>
+          <div class="site-sub">Tourist Guide Web App</div>
+        </div>
+      </a>
+
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="destinations.html" class="active">Destinations</a></li>
+          <li><a href="planner.html">Trip Planner</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+
+      <!-- Theme Toggle Switch -->
+      <div class="theme-toggle">
+        <input type="checkbox" id="themeSwitch">
+        <label for="themeSwitch" class="switch"></label>
+      </div>
+    </header>
+
+    <main>
+      
+      
+      <div style="display: flex; justify-content: flex-end; gap: 10px; align-items: center; margin-bottom: 15px; flex-wrap: wrap;">
+        <select id="regionFilter" onchange="filterRegion()" style="padding:10px; border-radius:8px; border:1px solid var(--border);">
+          <option value="all">All Regions</option>
+          <option value="north">North India</option>
+          <option value="west">West India</option>
+          <option value="east">East India</option>
+          <option value="south">South India</option>
+        </select>
+
+        <input type="text" id="searchBox" placeholder="Search destinations..."
+          style="padding:10px;width:100%;max-width:400px;border-radius:8px;border:1px solid var(--border);">
+      </div>
+
+      
+      <script>
+        function applyFilters() {
+          const input = document.getElementById('searchBox').value.toLowerCase().trim();
+          const region = document.getElementById('regionFilter').value.toLowerCase();
+          const cards = document.querySelectorAll('.card');
+
+          cards.forEach(card => {
+            const text = card.innerText.toLowerCase();
+            const id = card.id.toLowerCase();
+
+            const matchSearch = text.includes(input);
+            const matchRegion = (region === 'all' || id.startsWith(region + '-'));
+
+            card.style.display = (matchSearch && matchRegion) ? '' : 'none';
+          });
+        }
+
+        document.getElementById('regionFilter').addEventListener('change', applyFilters);
+        document.getElementById('searchBox').addEventListener('keyup', applyFilters);
+      </script>
+
+      <html>
+        <head>
+          <title></title>
+        </head>
+      </html>
+
+      <section class="section">
+        <h1>Top Destinations</h1>
+        <div class="grid" style="margin-top:12px;">
+          <!-- 🟢 North India -->
+        <article id="north-rammandir" class="card">
+          <a class="thumb"><img src="Images/North India/aayodhyarammandir/1.jfif" alt="Ram Mandir Ayodhya"></a>
+          <h3>Ram Mandir, Ayodhya (Uttar Pradesh)</h3>
+          <p>Magnificent temple dedicated to Lord Ram, symbolizing faith and cultural heritage.</p>
+          <div class="meta">
+            <span class="kv">Best months: Oct–Mar</span>
+            <a href="./North India/ayodhyarammandir.html" style="text-decoration:none;color:var(--accent-2)">Details →</a>
+          </div>
+        </article>
+
+          <article id="north-tajmahal" class="card">
+            <a class="thumb"><img src="Images/North India/TajMahel/1.webp" alt="Taj Mahal Agra"></a>
+            <h3>Taj Mahal, Agra (Uttar Pradesh)</h3>
+            <p>Iconic white marble mausoleum symbolizing eternal love, built by Shah Jahan.</p>
+            <div class="meta">
+              <span class="kv">Best months: Oct–Mar</span>
+              <a href="./North India/tajmahal.html" style="text-decoration:none;color:var(--accent-2)">Details →</a>
+            </div>
+          </article>
+
+          <article id="north-varanasi" class="card">
+            <a class="thumb"><img src="Images/North India/VaranasiGhats/1.jpg" alt="Varanasi Ghats"></a>
+            <h3>Varanasi Ghats, Varanasi (Uttar Pradesh)</h3>
+            <p>Spiritual heart of India, known for its ghats, temples, and Ganga aarti.</p>
+            <div class="meta">
+              <span class="kv">Best months: Oct–Mar</span>
+              <a href="./North India/varanasighats.html" style="text-decoration:none;color:var(--accent-2)">Details →</a>
+            </div>
+          </article>
+
+          <article id="north-redfort" class="card">
+            <a class="thumb"><img src="Images/North India/redfort/1.jpg" alt="Red Fort Delhi"></a>
+            <h3>Red Fort, Delhi</h3>
+            <p>Mughal-era fort complex and a UNESCO World Heritage Site, symbol of Indian independence.</p>
+            <div class="meta">
+              <span class="kv">Best months: Nov–Feb</span>
+              <a href="./North India/redfort.html" style="text-decoration:none;color:var(--accent-2)">Details →</a>
+            </div>
+          </article>
+
+          <article id="north-qutubminar" class="card">
+            <a class="thumb"><img src="Images/North India/qutubminar/1.jpg" alt="Qutub Minar Delhi"></a>
+            <h3>Qutub Minar, Delhi</h3>
+            <p>Towering minaret built in the 12th century, an architectural masterpiece of Indo-Islamic design.</p>
+            <div class="meta">
+              <span class="kv">Best months: Nov–Feb</span>
+              <a href="./North India/qutubminar.html" style="text-decoration:none;color:var(--accent-2)">Details →</a>
+            </div>
+          </article>
+
+          <article id="north-indiagate" class="card">
+            <a class="thumb"><img src="Images/North India/indiagate/1.jpg" alt="India Gate Delhi"></a>
+            <h3>India Gate, Delhi</h3>
+            <p>War memorial honoring Indian soldiers, surrounded by gardens and fountains.</p>
+            <div class="meta">
+              <span class="kv">Best months: Oct–Feb</span>
+              <a href="./North India/indiagate.html" style="text-decoration:none;color:var(--accent-2)">Details →</a>
+            </div>
+          </article>
+
+          <article id="north-goldentemple" class="card">
+            <a class="thumb"><img src="Images/North India/goldentmple/1.jpg" alt="Golden Temple Amritsar"></a>
+            <h3>Golden Temple, Amritsar (Punjab)</h3>
+            <p>Spiritual center of Sikhism with stunning golden architecture and serene water tank.</p>
+            <div class="meta">
+              <span class="kv">Best months: Nov–Mar</span>
+              <a href="./North India/goldentemple.html" style="text-decoration:none;color:var(--accent-2)">Details →</a>
+            </div>
+          </article>
+
+          <article id="north-rockgarden" class="card">
+            <a class="thumb"><img src="Images/North India/rockgarden/1.jpg" alt="Rock Garden Chandigarh"></a>
+            <h3>Rock Garden, Chandigarh</h3>
+            <p>Unique sculpture garden created from industrial and household waste materials.</p>
+            <div class="meta">
+              <span class="kv">Best months: Oct–Mar</span>
+              <a href="./North India/rockgarden.html" style="text-decoration:none;color:var(--accent-2)">Details →</a>
+            </div>
+          </article>
+
+          <article id="north-shimla" class="card">
+            <a class="thumb"><img src="Images/North India/shimla/1.jpg" alt="Shimla"></a>
+            <h3>Shimla, Himachal Pradesh</h3>
+            <p>Hill station known for colonial charm, Mall Road, and snowy mountain views.</p>
+            <div class="meta">
+              <span class="kv">Best months: Mar–Jun, Oct–Dec</span>
+              <a href="./North India/shimla.html" style="text-decoration:none;color:var(--accent-2)">Details →</a>
+            </div>
+          </article>
+
+          <article id="north-manali" class="card">
+            <a class="thumb"><img src="Images/North India/manali/1.jpg" alt="Manali Himachal Pradesh"></a>
+            <h3>Manali, Himachal Pradesh</h3>
+            <p>Adventure hub surrounded by mountains and valleys, famous for Solang and Rohtang.</p>
+            <div class="meta">
+              <span class="kv">Best months: Oct–Feb</span>
+              <a href="./North India/manali.html" style="text-decoration:none;color:var(--accent-2)">Details →</a>
+            </div>
+          </article>
+
+          <article id="north-dharamshala" class="card">
+            <a class="thumb"><img src="Images/North India/dharamshala/1.webp" alt="Dharamshala"></a>
+            <h3>Dharamshala & McLeod Ganj, Himachal Pradesh</h3>
+            <p>Peaceful towns surrounded by mountains, home to the Dalai Lama and Tibetan culture.</p>
+            <div class="meta">
+              <span class="kv">Best months: Mar–Jun, Sep–Nov</span>
+              <a href="./North India/dharamshala.html" style="text-decoration:none;color:var(--accent-2)">Details →</a>
+            </div>
+          </article>
+
+          <article id="north-srinagar" class="card">
+            <a class="thumb"><img src="Images/North India/dallake/1.jpg" alt="Srinagar Dal Lake"></a>
+            <h3>Srinagar & Dal Lake, Jammu and Kashmir</h3>
+            <p>Scenic beauty, shikara rides, and houseboats on the stunning Dal Lake.</p>
+            <div class="meta">
+              <span class="kv">Best months: Apr–Oct</span>
+              <a href="./North India/shrinagardallake.html" style="text-decoration:none;color:var(--accent-2)">Details →</a>
+            </div>
+          </article>
+
+          <article id="north-leh" class="card">
+            <a class="thumb"><img src="Images/North India/lehladakh/1.jpg" alt="Leh Ladakh"></a>
+            <h3>Leh–Ladakh, Jammu and Kashmir</h3>
+            <p>Adventure destination with monasteries, mountain passes, and breathtaking landscapes.</p>
+            <div class="meta">
+              <span class="kv">Best months: Jun–Sep</span>
+              <a href="./North India/lehladak.html" style="text-decoration:none;color:var(--accent-2)">Details →</a>
+            </div>
+          </article>
+
+          <article id="north-vaishnodevi" class="card">
+            <a class="thumb"><img src="Images/North India/vaishnodevi/1.jpg" alt="Vaishno Devi"></a>
+            <h3>Vaishno Devi, Jammu and Kashmir</h3>
+            <p>Famous Hindu pilgrimage site located in the Trikuta Mountains near Katra.</p>
+            <div class="meta">
+              <span class="kv">Best months: Mar–Oct</span>
+              <a href="./North India/vaishodevi.html" style="text-decoration:none;color:var(--accent-2)">Details →</a>
+            </div>
+          </article>
+
+          <article id="north-rishikesh" class="card">
+            <a class="thumb"><img src="Images/North India/rishikesh/1.jpg" alt="Rishikesh"></a>
+            <h3>Rishikesh, Uttarakhand</h3>
+            <p>Yoga capital of the world, famous for Ganga aarti, river rafting, and spirituality.</p>
+            <div class="meta">
+              <span class="kv">Best months: Feb–May, Sep–Nov</span>
+              <a href="./North India/rishikesh.html" style="text-decoration:none;color:var(--accent-2)">Details →</a>
+            </div>
+          </article>
+
+          <article id="north-haridwar" class="card">
+            <a class="thumb"><img src="Images/North India/haridwar/1.webp" alt="Haridwar"></a>
+            <h3>Haridwar, Uttarakhand</h3>
+            <p>Ancient holy city where the Ganges exits the Himalayas, famous for the Ganga Aarti.</p>
+            <div class="meta">
+              <span class="kv">Best months: Feb–Mar, Aug–Oct</span>
+              <a href="./North India/haridwar.html" style="text-decoration:none;color:var(--accent-2)">Details →</a>
+            </div>
+          </article>
+
+          <article id="north-nainital" class="card">
+            <a class="thumb"><img src="Images/North India/nainital/1.jpg" alt="Nainital"></a>
+            <h3>Nainital, Uttarakhand</h3>
+            <p>Picturesque hill station around a beautiful lake, ideal for boating and relaxing.</p>
+            <div class="meta">
+              <span class="kv">Best months: Mar–Jun, Oct–Nov</span>
+              <a href="./North India/nainital.html" style="text-decoration:none;color:var(--accent-2)">Details →</a>
+            </div>
+          </article>
+
+          
+          <!-- 🔴 WEST INDIA -->
+          <article id="west-hawamahal" class="card">
+            <a class="thumb"><img src="Images/West India/HawaMahal/1.jpg" alt="Hawa Mahal Jaipur"></a>
+            <h3>Hawa Mahal, Jaipur (Rajasthan)</h3>
+            <p>Iconic “Palace of Winds” built from red and pink sandstone with intricate latticework windows.</p>
+            <div class="meta">
+              <span class="kv">Best months: Oct–Mar</span>
+              <a href="./West India/hawamahal.html" style="text-decoration:none;color:var(--accent-2)">Details →</a>
+            </div>
+          </article>
+
+          <article id="west-udaipurpalace" class="card">
+            <a class="thumb"><img src="Images/West India/citypalaceudaipur/1.jpg" alt="Udaipur City Palace"></a>
+            <h3>Udaipur City Palace, Udaipur (Rajasthan)</h3>
+            <p>Magnificent royal residence overlooking Lake Pichola, blending Rajasthani and Mughal architecture.</p>
+            <div class="meta">
+              <span class="kv">Best months: Oct–Mar</span>
+              <a href="./West India/udaipurcitypalace.html" style="text-decoration:none;color:var(--accent-2)">Details →</a>
+            </div>
+          </article>
+
+          <article id="west-jaisalmerfort" class="card">
+            <a class="thumb"><img src="Images/West India/jaisalmerfort/1.jpg" alt="Jaisalmer Fort"></a>
+            <h3>Jaisalmer Fort, Jaisalmer (Rajasthan)</h3>
+            <p>Massive golden fort in the heart of the Thar Desert, filled with palaces and temples.</p>
+            <div class="meta">
+              <span class="kv">Best months: Nov–Mar</span>
+              <a href="./West India/jaisalmerfort.html" style="text-decoration:none;color:var(--accent-2)">Details →</a>
+            </div>
+          </article>
+
+          <article id="west-ranthambore" class="card">
+            <a class="thumb"><img src="Images/West India/ranthambornaionalpark/1.jpg" alt="Ranthambore National Park"></a>
+            <h3>Ranthambore National Park, Rajasthan</h3>
+            <p>Famous tiger reserve offering thrilling jungle safaris amid historic ruins and lakes.</p>
+            <div class="meta">
+              <span class="kv">Best months: Oct–Apr</span>
+              <a href="./West India/ranthambhornationalpart.html" style="text-decoration:none;color:var(--accent-2)">Details →</a>
+            </div>
+          </article>
+
+          <article id="west-gatewayofindia" class="card">
+            <a class="thumb"><img src="Images/West India/gatewayofindiamumbai/1.jpg" alt="Gateway of India Mumbai"></a>
+            <h3>Gateway of India, Mumbai (Maharashtra)</h3>
+            <p>Historic arch monument overlooking the Arabian Sea, built during British rule.</p>
+            <div class="meta">
+              <span class="kv">Best months: Nov–Feb</span>
+              <a href="./West India/gatewayofindia.html" style="text-decoration:none;color:var(--accent-2)">Details →</a>
+            </div>
+          </article>
+
+          <article id="west-ajantaellora" class="card">
+            <a class="thumb"><img src="Images/West India/elloracaves/1.jpg" alt="Ajanta and Ellora Caves"></a>
+            <h3>Ajanta & Ellora Caves, Aurangabad (Maharashtra)</h3>
+            <p>Ancient rock-cut caves showcasing Buddhist, Hindu, and Jain temples and sculptures.</p>
+            <div class="meta">
+              <span class="kv">Best months: Oct–Mar</span>
+              <a href="./West India/ajantaeloracaves.html" style="text-decoration:none;color:var(--accent-2)">Details →</a>
+            </div>
+          </article>
+
+          <article id="west-shirdi" class="card">
+            <a class="thumb"><img src="Images/West India/saibabatample/1.jpg" alt="Shirdi Sai Baba Temple"></a>
+            <h3>Shirdi Sai Baba Temple, Maharashtra</h3>
+            <p>Spiritual center dedicated to Sai Baba, attracting millions of devotees every year.</p>
+            <div class="meta">
+              <span class="kv">Best months: Jan–Mar, Oct–Dec</span>
+              <a href="./West India/shirdisaibabatemple.html" style="text-decoration:none;color:var(--accent-2)">Details →</a>
+            </div>
+          </article>
+
+          <article id="west-gir" class="card">
+            <a class="thumb"><img src="Images/West India/girnationalpark/1.webp" alt="Gir National Park"></a>
+            <h3>Gir National Park, Gujarat</h3>
+            <p>Only home of the Asiatic lions, offering jeep safaris through dry deciduous forest.</p>
+            <div class="meta">
+              <span class="kv">Best months: Dec–Mar</span>
+              <a href="./West India/girnationalpark.html" style="text-decoration:none;color:var(--accent-2)">Details →</a>
+            </div>
+          </article>
+
+          <article id="west-somnath" class="card">
+            <a class="thumb"><img src="Images/West India/Somanathmandir/1.jpg" alt="Somnath Temple Gujarat"></a>
+            <h3>Somnath Temple, Gujarat</h3>
+            <p>One of the twelve Jyotirlinga shrines of Lord Shiva, located on the Arabian coast.</p>
+            <div class="meta">
+              <span class="kv">Best months: Oct–Mar</span>
+              <a href="./West India/somnathtemple.html" style="text-decoration:none;color:var(--accent-2)">Details →</a>
+            </div>
+          </article>
+
+          <article id="west-rannofkutch" class="card">
+            <a class="thumb"><img src="Images/West India/GreatRannOfKutch/1.jpg" alt="Rann of Kutch Gujarat"></a>
+            <h3>Rann of Kutch, Gujarat</h3>
+            <p>Vast white salt desert famous for the Rann Utsav festival and beautiful sunsets.</p>
+            <div class="meta">
+              <span class="kv">Best months: Nov–Feb</span>
+              <a href="./West India/ranofkutch.html" style="text-decoration:none;color:var(--accent-2)">Details →</a>
+            </div>
+          </article>
+
+          
+
+          <!-- 🟡 EAST INDIA -->
+          <article id="east-jagannath" class="card">
+            <a class="thumb"><img src="Images/East India/jagannathtemple/1.webp" alt="Jagannath Temple Puri"></a>
+            <h3>Jagannath Temple, Puri (Odisha)</h3>
+            <p>One of the Char Dham pilgrimage sites, famous for the annual Rath Yatra festival.</p>
+            <div class="meta">
+              <span class="kv">Best months: Oct–Mar</span>
+              <a href="./East India/jagannath.html" style="text-decoration:none;color:var(--accent-2)">Details →</a>
+            </div>
+          </article>
+
+          <article id="east-konark" class="card">
+            <a class="thumb"><img src="Images/East India/KonarkaTemple/1.jpg" alt="Konark Sun Temple"></a>
+            <h3>Konark Sun Temple, Odisha</h3>
+            <p>Magnificent 13th-century chariot-shaped temple dedicated to the Sun God, Surya.</p>
+            <div class="meta">
+              <span class="kv">Best months: Nov–Feb</span>
+              <a href="./East India/kornaksuntemple.html" style="text-decoration:none;color:var(--accent-2)">Details →</a>
+            </div>
+          </article>
+
+          <article id="east-chilika" class="card">
+            <a class="thumb"><img src="Images/East India/chilikalake/1.jpg" alt="Chilika Lake Odisha"></a>
+            <h3>Chilika Lake, Odisha</h3>
+            <p>Asia’s largest brackish water lagoon, famous for migratory birds and dolphins.</p>
+            <div class="meta">
+              <span class="kv">Best months: Nov–Feb</span>
+              <a href="./East India/chilikalake.html" style="text-decoration:none;color:var(--accent-2)">Details →</a>
+            </div>
+          </article>
+
+          <article id="east-victoriamemorial" class="card">
+            <a class="thumb"><img src="Images/East India/VictoriaMemorial/1.jpg" alt="Victoria Memorial Kolkata"></a>
+            <h3>Victoria Memorial, Kolkata (West Bengal)</h3>
+            <p>Marble monument built in memory of Queen Victoria, surrounded by scenic gardens.</p>
+            <div class="meta">
+              <span class="kv">Best months: Nov–Feb</span>
+              <a href="./East India/victoriyamamorial.html" style="text-decoration:none;color:var(--accent-2)">Details →</a>
+            </div>
+          </article>
+
+          <article id="east-sundarbans" class="card">
+            <a class="thumb"><img src="Images/East India/SundarbanNationalPark/1.jpg" alt="Sundarbans West Bengal"></a>
+            <h3>Sundarbans, West Bengal</h3>
+            <p>Largest mangrove forest and tiger reserve, home to the famous Royal Bengal Tiger.</p>
+            <div class="meta">
+              <span class="kv">Best months: Nov–Feb</span>
+              <a href="./East India/sundarban.html" style="text-decoration:none;color:var(--accent-2)">Details →</a>
+            </div>
+          </article>
+
+          <article id="east-darjeeling" class="card">
+            <a class="thumb"><img src="Images/East India/DarjeelingWestbengal/1.jpg" alt="Darjeeling West Bengal"></a>
+            <h3>Darjeeling, West Bengal</h3>
+            <p>Hill station known for tea gardens, Toy Train, and views of Kanchenjunga peak.</p>
+            <div class="meta">
+              <span class="kv">Best months: Apr–Jun, Oct–Dec</span>
+              <a href="./East India/darjeeling.html" style="text-decoration:none;color:var(--accent-2)">Details →</a>
+            </div>
+          </article>
+
+          <article id="east-kaziranga" class="card">
+            <a class="thumb"><img src="Images/East India/kaziranganationalpark/1.jpg" alt="Kaziranga National Park Assam"></a>
+            <h3>Kaziranga National Park, Assam</h3>
+            <p>UNESCO World Heritage Site known for the one-horned rhinoceros and diverse wildlife.</p>
+            <div class="meta">
+              <span class="kv">Best months: Nov–Apr</span>
+              <a href="./East India/kaziranganationalpark.html" style="text-decoration:none;color:var(--accent-2)">Details →</a>
+            </div>
+          </article>
+
+          <article id="east-kamakhya" class="card">
+            <a class="thumb"><img src="Images/East India/KamakhyaTemple/1.jpg" alt="Kamakhya Temple Assam"></a>
+            <h3>Kamakhya Temple, Assam</h3>
+            <p>Ancient and powerful Shakti Peeth dedicated to Goddess Kamakhya, located in Guwahati.</p>
+            <div class="meta">
+              <span class="kv">Best months: Oct–Mar</span>
+              <a href="./East India/kamakhayatemple.html" style="text-decoration:none;color:var(--accent-2)">Details →</a>
+            </div>
+          </article>
+
+          <article id="east-shillong" class="card">
+            <a class="thumb"><img src="Images/East India/shillongmeghalaya/1.webp" alt="Shillong Meghalaya"></a>
+            <h3>Shillong, Meghalaya</h3>
+            <p>Known as the “Scotland of the East,” famous for waterfalls, hills, and music culture.</p>
+            <div class="meta">
+              <span class="kv">Best months: Oct–Apr</span>
+              <a href="./East India/shilong.html" style="text-decoration:none;color:var(--accent-2)">Details →</a>
+            </div>
+          </article>
+
+          <article id="east-cherrapunji" class="card">
+            <a class="thumb"><img src="Images/East India/CherrapunjiTourism/1.webp" alt="Cherrapunji Meghalaya"></a>
+            <h3>Cherrapunji, Meghalaya</h3>
+            <p>One of the wettest places on Earth, home to living root bridges and misty waterfalls.</p>
+            <div class="meta">
+              <span class="kv">Best months: Oct–May</span>
+              <a href="./East India/cherrapunji.html" style="text-decoration:none;color:var(--accent-2)">Details →</a>
+            </div>
+          </article>
+
+          <article id="east-tawang" class="card">
+            <a class="thumb"><img src="Images/East India/TawangMonastery/1.jpg" alt="Tawang Monastery Arunachal Pradesh"></a>
+            <h3>Tawang Monastery, Arunachal Pradesh</h3>
+            <p>Largest monastery in India, offering breathtaking views of the Himalayas.</p>
+            <div class="meta">
+              <span class="kv">Best months: Mar–Oct</span>
+              <a href="./East India/tawangmonastery.html" style="text-decoration:none;color:var(--accent-2)">Details →</a>
+            </div>
+          </article>
+
+          <article id="east-loktak" class="card">
+            <a class="thumb"><img src="Images/East India/loktaklake/1.webp" alt="Loktak Lake Manipur"></a>
+            <h3>Loktak Lake, Manipur</h3>
+            <p>Freshwater lake with floating islands (phumdis), home to Keibul Lamjao National Park.</p>
+            <div class="meta">
+              <span class="kv">Best months: Oct–Mar</span>
+              <a href="./East India/lotaklake.html" style="text-decoration:none;color:var(--accent-2)">Details →</a>
+            </div>
+          </article>
+
+          <article id="east-hornbill" class="card">
+            <a class="thumb"><img src="Images/East India/HornbillfestivalNagaland/1.jpg" alt="Hornbill Festival Nagaland"></a>
+            <h3>Hornbill Festival, Nagaland</h3>
+            <p>Cultural extravaganza celebrating Naga heritage, music, dance, and food.</p>
+            <div class="meta">
+              <span class="kv">Best months: December</span>
+              <a href="./East India/hornbillfestival.html" style="text-decoration:none;color:var(--accent-2)">Details →</a>
+            </div>
+          </article>
+
+          <article id="east-aizawl" class="card">
+            <a class="thumb"><img src="Images/East India/aizawlmizoram/1.jpg" alt="Aizawl Mizoram"></a>
+            <h3>Aizawl, Mizoram</h3>
+            <p>Peaceful hill city known for its panoramic views and Mizo culture.</p>
+            <div class="meta">
+              <span class="kv">Best months: Oct–Mar</span>
+              <a href="./East India/aizawl.html" style="text-decoration:none;color:var(--accent-2)">Details →</a>
+            </div>
+          </article>
+
+          <article id="east-kohima" class="card">
+            <a class="thumb"><img src="Images/East India/kohimanagaland/1.jpg" alt="Kohima Nagaland"></a>
+            <h3>Kohima, Nagaland</h3>
+            <p>Historic town known for World War II cemetery and vibrant tribal festivals.</p>
+            <div class="meta">
+              <span class="kv">Best months: Oct–May</span>
+              <a href="./East India/kohima.html" style="text-decoration:none;color:var(--accent-2)">Details →</a>
+            </div>
+          </article>
+
+
+          <!-- 🔵 South India -->
+          <article id="south-thanjavur" class="card">
+            <a class="thumb"><img src="Images/South India/Thanjavurtemple/1.jpg" alt="Thanjavur Big Temple"></a>
+            <h3>Thanjavur Big Temple, Tamil Nadu</h3>
+            <p>Magnificent Chola-era temple dedicated to Lord Shiva, showcasing Dravidian architecture.</p>
+            <div class="meta">
+              <span class="kv">Best months: Nov–Feb</span>
+              <a href="./South India/thanjavurbigtemple.html" style="text-decoration:none;color:var(--accent-2)">Details →</a>
+            </div>
+          </article>
+
+          <article id="south-meenakshi" class="card">
+            <a class="thumb"><img src="Images/South India/MaduraiMeenakshiTemple/1.jpg" alt="Meenakshi Temple Madurai"></a>
+            <h3>Meenakshi Temple, Madurai</h3>
+            <p>Vibrant temple complex known for its colorful gopurams and intricate sculptures.</p>
+            <div class="meta">
+              <span class="kv">Best months: Dec–Mar</span>
+              <a href="./South India/meenakshitemple.html" style="text-decoration:none;color:var(--accent-2)">Details →</a>
+            </div>
+          </article>
+
+          <article id="south-marina" class="card">
+            <a class="thumb"><img src="Images/South India/marinabeachchennai/1.jpg" alt="Marina Beach Chennai"></a>
+            <h3>Marina Beach, Chennai</h3>
+            <p>One of the world’s longest beaches, popular for sunsets and local snacks.</p>
+            <div class="meta">
+              <span class="kv">Best months: Nov–Feb</span>
+              <a href="./South India/marinabeach.html" style="text-decoration:none;color:var(--accent-2)">Details →</a>
+            </div>
+          </article>
+
+          <article id="south-mysore" class="card">
+            <a class="thumb"><img src="Images/South India/MysorePalace/1.jpg" alt="Mysore Palace"></a>
+            <h3>Mysore Palace, Karnataka</h3>
+            <p>Opulent royal residence blending Indo-Saracenic architecture, lit beautifully at night.</p>
+            <div class="meta">
+              <span class="kv">Best months: Oct–Mar</span>
+              <a href="./South India/maysoorpalace.html" style="text-decoration:none;color:var(--accent-2)">Details →</a>
+            </div>
+          </article>
+
+          <article id="south-hampi" class="card">
+            <a class="thumb"><img src="Images/South India/Hampikarnataka/1.jpg" alt="Hampi Karnataka"></a>
+            <h3>Hampi, Karnataka</h3>
+            <p>UNESCO World Heritage site with ancient ruins of Vijayanagara Empire and boulder landscapes.</p>
+            <div class="meta">
+              <span class="kv">Best months: Nov–Feb</span>
+              <a href="./South India/hampi.html" style="text-decoration:none;color:var(--accent-2)">Details →</a>
+            </div>
+          </article>
+
+          <article id="south-charminar" class="card">
+            <a class="thumb"><img src="Images/South India/CharminarofHyderabad/1.jpg" alt="Charminar Hyderabad"></a>
+            <h3>Charminar, Hyderabad</h3>
+            <p>Iconic monument in Hyderabad symbolizing the city’s Islamic architecture and culture.</p>
+            <div class="meta">
+              <span class="kv">Best months: Oct–Feb</span>
+              <a href="./South India/charminar.html" style="text-decoration:none;color:var(--accent-2)">Details →</a>
+            </div>
+          </article>
+
+          <article id="south-khajuraho" class="card">
+            <a class="thumb"><img src="Images/South India/Khajuraho/1.jpg" alt="Khajuraho Temples"></a>
+            <h3>Khajuraho Temples, Madhya Pradesh</h3>
+            <p>Exquisite group of Hindu and Jain temples famed for their detailed carvings and sculptures.</p>
+            <div class="meta">
+              <span class="kv">Best months: Oct–Mar</span>
+              <a href="./South India/khajuraho.html" style="text-decoration:none;color:var(--accent-2)">Details →</a>
+            </div>
+          </article>
+
+          <article id="south-sanchi" class="card">
+            <a class="thumb"><img src="Images/South India/SanchiStupa/1.jpg" alt="Sanchi Stupa"></a>
+            <h3>Sanchi Stupa, Madhya Pradesh</h3>
+            <p>Ancient Buddhist monument built by Emperor Ashoka, known for its stone carvings.</p>
+            <div class="meta">
+              <span class="kv">Best months: Nov–Feb</span>
+              <a href="./South India/sanchistup.html" style="text-decoration:none;color:var(--accent-2)">Details →</a>
+            </div>
+          </article>
+
+          <article id="south-kanha" class="card">
+            <a class="thumb"><img src="Images/South India/kanhanationalpark/1.jpg" alt="Kanha National Park"></a>
+            <h3>Kanha National Park, Madhya Pradesh</h3>
+            <p>Dense forest reserve known for tigers, leopards, and barasingha — inspiration for The Jungle Book.</p>
+            <div class="meta">
+              <span class="kv">Best months: Oct–Jun</span>
+              <a href="./South India/kanhanationalpark.html" style="text-decoration:none;color:var(--accent-2)">Details →</a>
+            </div>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p>© <span id="year"></span> Incredible India — Tourist Guide. All rights reserved.</p>
+      <p style="margin-top: 5px; font-size: 0.9em; opacity: 0.85;">Developed by: <strong>Viraj Tilva</strong> | Email: <strong>tilvaviraj@gmail.com</strong></p>
+    </footer>
+  </div>
+
+  <script src="JS/script.js"></script>
+  <script>
+    function searchDestinations() {
+        const input = document.getElementById('searchBox').value.toLowerCase();
+        const cards = document.querySelectorAll('.card');
+        cards.forEach(card => {
+          const text = card.innerText.toLowerCase();
+          card.style.display = text.includes(input) ? '' : 'none';
+        });
+      }
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

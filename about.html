@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>About — Incredible India</title>
+  <link rel="stylesheet" href="CSS/style.css">
+  <script src="./js/script.js"></script>
+</head>
+<body>
+  <div class="site container">
+    <header>
+      <a class="brand" href="index.html">
+        <div class="logo"><img src="Images/Logo/in.png"></div>
+        <div>
+          <div class="site-title">Incredible India</div>
+          <div class="site-sub">Tourist Guide Web App</div>
+        </div>
+      </a>
+
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html" class="active">About</a></li>
+          <li><a href="destinations.html">Destinations</a></li>
+          <li><a href="planner.html">Trip Planner</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+
+      <!-- Theme Toggle Switch -->
+      <div class="theme-toggle">
+        <input type="checkbox" id="themeSwitch">
+        <label for="themeSwitch" class="switch"></label>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero3">
+        <h2>Unfold the Story of India</h2>
+        <p>
+          India is a land of contrasts — where traditions meet innovation and every region paints a different story. 
+          Our mission is to help you explore, understand, and fall in love with its diversity, one destination at a time.
+        </p>
+      </section>
+
+      <section class="vision">
+        <h2>Our Vision</h2>
+        <p>
+          To create a digital window into the heart of India — a place where travelers can discover the unseen, 
+          learn the untold, and plan unforgettable journeys across the subcontinent.
+        </p>
+      </section>
+
+      <section class="values">
+        <h2>What Makes Us Different</h2>
+        <div class="value-grid">
+          <div class="value-card">
+            <h3>🏞️ Authentic Experiences</h3>
+            <p>We highlight the real India — its local stories, hidden gems, and vibrant traditions beyond the tourist maps.</p>
+          </div>
+
+          <div class="value-card">
+            <h3>🕉️ Cultural Connection</h3>
+            <p>Understand the essence of Indian culture through art, food, festivals, and the voices of local communities.</p>
+          </div>
+
+          <div class="value-card">
+            <h3>🚆 Seamless Exploration</h3>
+            <p>Plan your adventures with practical travel details, regional insights, and inspiration for every traveler type.</p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p>© <span id="year"></span> Incredible India — Tourist Guide. All rights reserved.</p>
+      <p style="margin-top: 5px; font-size: 0.9em; opacity: 0.85;">Developed by: <strong>Viraj Tilva</strong> | Email: <strong>tilvaviraj@gmail.com</strong></p>
+    </footer>
+  </div>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

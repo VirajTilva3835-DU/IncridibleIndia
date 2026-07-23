@@ -1,0 +1,274 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Trip Planner — Incredible India</title>
+  <link rel="stylesheet" href="CSS/style.css">
+</head>
+
+<body>
+  <div class="site container">
+    <header>
+      <a class="brand" href="index.html">
+        <div class="logo"><img src="./Images/Logo/in.png" alt="Logo"></div>
+        <div>
+          <div class="site-title">Incredible India</div>
+          <div class="site-sub">Tourist Guide Web App</div>
+        </div>
+      </a>
+
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="destinations.html">Destinations</a></li>
+          <li><a href="planner.html" class="active">Trip Planner</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+
+      <!-- Theme Toggle Switch -->
+      <div class="theme-toggle">
+        <input type="checkbox" id="themeSwitch">
+        <label for="themeSwitch" class="switch"></label>
+      </div>
+    </header>
+
+    <main>
+      <section id="travelTripsPlanner" class="planner-stage">
+        <h2>✨ Interactive Travel Trips Planner</h2>
+        <p class="planner-subtitle">Customize and generate your dream Indian itinerary dynamically</p>
+        
+        <!-- Stepper Indicator -->
+        <div class="stepper">
+          <div class="step active" id="step-ind-1">
+            <div class="step-num">1</div>
+            <div class="step-label">Region</div>
+          </div>
+          <div class="step-line"></div>
+          <div class="step" id="step-ind-2">
+            <div class="step-num">2</div>
+            <div class="step-label">Vibe</div>
+          </div>
+          <div class="step-line"></div>
+          <div class="step" id="step-ind-3">
+            <div class="step-num">3</div>
+            <div class="step-label">Duration</div>
+          </div>
+          <div class="step-line"></div>
+          <div class="step" id="step-ind-4">
+            <div class="step-num">4</div>
+            <div class="step-label">Budget</div>
+          </div>
+        </div>
+
+        <form id="plannerForm">
+          <!-- Step 1: Region -->
+          <div class="planner-step-panel" id="step-panel-1">
+            <h3>Which region of India would you like to explore?</h3>
+            <div class="card-selector-grid">
+              <input type="radio" name="plannerRegion" id="p-north" value="north" checked>
+              <label for="p-north" class="selector-card">
+                <span class="card-icon">🏔️</span>
+                <span class="card-title">North India</span>
+                <span class="card-desc">Himalayas, historic forts, and spiritual riverbanks</span>
+              </label>
+
+              <input type="radio" name="plannerRegion" id="p-west" value="west">
+              <label for="p-west" class="selector-card">
+                <span class="card-icon">🏜️</span>
+                <span class="card-title">West India</span>
+                <span class="card-desc">Golden deserts, heritage palaces, and coastal cities</span>
+              </label>
+
+              <input type="radio" name="plannerRegion" id="p-east" value="east">
+              <label for="p-east" class="selector-card">
+                <span class="card-icon">🌿</span>
+                <span class="card-title">East India</span>
+                <span class="card-desc">Tea gardens, rich biodiversity, and ancient temples</span>
+              </label>
+
+              <input type="radio" name="plannerRegion" id="p-south" value="south">
+              <label for="p-south" class="selector-card">
+                <span class="card-icon">🌴</span>
+                <span class="card-title">South India</span>
+                <span class="card-desc">Backwaters, grand architectures, and hill stations</span>
+              </label>
+            </div>
+            <div class="planner-actions">
+              <button type="button" class="btn-next" id="btn-next-1">Next Step →</button>
+            </div>
+          </div>
+
+          <!-- Step 2: Vibe/Interest -->
+          <div class="planner-step-panel" id="step-panel-2" style="display:none;">
+            <h3>What is your preferred travel style & vibe?</h3>
+            <div class="card-selector-grid">
+              <input type="radio" name="plannerInterest" id="p-historic" value="historic" checked>
+              <label for="p-historic" class="selector-card">
+                <span class="card-icon">🏛️</span>
+                <span class="card-title">Historic & Cultural</span>
+                <span class="card-desc">Palaces, museums, architecture, and legends</span>
+              </label>
+
+              <input type="radio" name="plannerInterest" id="p-nature" value="nature">
+              <label for="p-nature" class="selector-card">
+                <span class="card-icon">🏞️</span>
+                <span class="card-title">Nature & Hills</span>
+                <span class="card-desc">Scenic lookouts, quiet lakes, and fresh valley breeze</span>
+              </label>
+
+              <input type="radio" name="plannerInterest" id="p-spiritual" value="spiritual">
+              <label for="p-spiritual" class="selector-card">
+                <span class="card-icon">🛕</span>
+                <span class="card-title">Spiritual & Devotional</span>
+                <span class="card-desc">Sacred temples, river ghats, and peaceful experiences</span>
+              </label>
+
+              <input type="radio" name="plannerInterest" id="p-wildlife" value="wildlife">
+              <label for="p-wildlife" class="selector-card">
+                <span class="card-icon">🐅</span>
+                <span class="card-title">Wildlife & Adventure</span>
+                <span class="card-desc">Tiger reserves, national parks, and safari drives</span>
+              </label>
+            </div>
+            <div class="planner-actions">
+              <button type="button" class="btn-back" id="btn-back-2">← Back</button>
+              <button type="button" class="btn-next" id="btn-next-2">Next Step →</button>
+            </div>
+          </div>
+
+          <!-- Step 3: Duration -->
+          <div class="planner-step-panel" id="step-panel-3" style="display:none;">
+            <h3>How long will your trip be?</h3>
+            <div class="card-selector-grid duration-grid">
+              <input type="radio" name="plannerDuration" id="p-dur-3" value="3" checked>
+              <label for="p-dur-3" class="selector-card">
+                <span class="card-icon">🚗</span>
+                <span class="card-title">Weekend Gateway</span>
+                <span class="card-desc">3 Days of curated experiences</span>
+              </label>
+
+              <input type="radio" name="plannerDuration" id="p-dur-7" value="7">
+              <label for="p-dur-7" class="selector-card">
+                <span class="card-icon">✈️</span>
+                <span class="card-title">Classic Explorer</span>
+                <span class="card-desc">7 Days of comprehensive touring</span>
+              </label>
+
+              <input type="radio" name="plannerDuration" id="p-dur-14" value="14">
+              <label for="p-dur-14" class="selector-card">
+                <span class="card-icon">🚂</span>
+                <span class="card-title">Grand Journey</span>
+                <span class="card-desc">14 Days of deep local immersion</span>
+              </label>
+            </div>
+            <div class="planner-actions">
+              <button type="button" class="btn-back" id="btn-back-3">← Back</button>
+              <button type="button" class="btn-next" id="btn-next-3">Next Step →</button>
+            </div>
+          </div>
+
+          <!-- Step 4: Budget -->
+          <div class="planner-step-panel" id="step-panel-4" style="display:none;">
+            <h3>What is your budget style?</h3>
+            <div class="card-selector-grid duration-grid">
+              <input type="radio" name="plannerBudget" id="p-bud-eco" value="eco" checked>
+              <label for="p-bud-eco" class="selector-card">
+                <span class="card-icon">🎒</span>
+                <span class="card-title">Economy Backpacking</span>
+                <span class="card-desc">Public transport, local guesthouses & local diners</span>
+              </label>
+
+              <input type="radio" name="plannerBudget" id="p-bud-mid" value="mid">
+              <label for="p-bud-mid" class="selector-card">
+                <span class="card-icon">🚕</span>
+                <span class="card-title">Comfort Explorer</span>
+                <span class="card-desc">Cabs, 3-star hotels, and nice restaurants</span>
+              </label>
+
+              <input type="radio" name="plannerBudget" id="p-bud-lux" value="lux">
+              <label for="p-bud-lux" class="selector-card">
+                <span class="card-icon">👑</span>
+                <span class="card-title">Premium Luxury</span>
+                <span class="card-desc">Private chauffeur, 5-star heritage resorts & fine dining</span>
+              </label>
+            </div>
+            <div class="planner-actions">
+              <button type="button" class="btn-back" id="btn-back-4">← Back</button>
+              <button type="submit" class="btn-submit" id="generateItineraryBtn">✨ Generate Travel Trip</button>
+            </div>
+          </div>
+        </form>
+
+        <!-- Step 5: Generated Results (Timeline & Itinerary) -->
+        <div id="plannerResults" class="planner-results" style="display:none;">
+          <div class="results-header">
+            <h3>🗺️ Your Custom Travel Trip Itinerary</h3>
+            <div class="results-meta">
+              <span id="resRegion" class="badge"></span>
+              <span id="resVibe" class="badge"></span>
+              <span id="resDuration" class="badge"></span>
+              <span id="resBudget" class="badge"></span>
+            </div>
+          </div>
+
+          <div class="itinerary-content">
+            <div class="itinerary-section">
+              <h4>📍 Recommended Destinations To Visit</h4>
+              <ul id="resPlaces" class="places-pill-list"></ul>
+            </div>
+
+            <div class="itinerary-section">
+              <h4>📅 Day-by-Day Itinerary Planner</h4>
+              <div id="itineraryTimeline" class="timeline"></div>
+            </div>
+
+            <div class="itinerary-section">
+              <h4>💰 Estimated Cost Breakdown (in INR)</h4>
+              <div class="budget-table-wrapper">
+                <table class="budget-table">
+                  <thead>
+                    <tr>
+                      <th>Expense Category</th>
+                      <th>Estimated Cost</th>
+                    </tr>
+                  </thead>
+                  <tbody id="budgetTableBody"></tbody>
+                  <tfoot>
+                    <tr>
+                      <th>Total Estimated Trip Cost</th>
+                      <th id="totalEstimatedCost"></th>
+                    </tr>
+                  </tfoot>
+                </table>
+              </div>
+            </div>
+
+            <div class="itinerary-section tips-section">
+              <h4>💡 Specific Travel Tips for this Trip</h4>
+              <ul id="itinerarySpecificTips" class="list"></ul>
+            </div>
+          </div>
+
+          <div class="results-actions">
+            <button type="button" class="btn-print" onclick="window.print()">🖨️ Print / Save Itinerary</button>
+            <button type="button" class="btn-restart" id="btn-restart-planner">↺ Plan Another Trip</button>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p>© <span id="year"></span> Incredible India — Tourist Guide. All rights reserved.</p>
+      <p style="margin-top: 5px; font-size: 0.9em; opacity: 0.85;">Developed by: <strong>Viraj Tilva</strong> | Email: <strong>tilvaviraj@gmail.com</strong></p>
+    </footer>
+  </div>
+
+  <script src="JS/script.js"></script>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

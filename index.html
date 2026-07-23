@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Incredible India — Tourist Guide</title>
+  <link rel="stylesheet" href="CSS/style.css">
+</head>
+
+<body>
+  <div class="site container">
+    <header>
+      <a class="brand" href="index.html">
+        <div class="logo"><img src="./Images/Logo/in.png"></div>
+        <div>
+          <div class="site-title">Incredible India</div>
+          <div class="site-sub">Tourist Guide Web App</div>
+        </div>
+      </a>
+
+      <nav>
+        <ul>
+          <li><a href="index.html" class="active">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="destinations.html">Destinations</a></li>
+          <li><a href="planner.html">Trip Planner</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="theme-toggle">
+        <input type="checkbox" id="themeSwitch">
+        <label for="themeSwitch" class="switch"></label>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero" aria-labelledby="welcome">
+        <div class="left">
+          <h1 id="welcome">Welcome to Incredible India</h1>
+          <p>Discover India’s diverse landscapes, cultures, and experiences — from the deserts of Rajasthan to the beaches of Goa and the backwaters of Kerala.</p>
+          <p class="kv">Plan • Explore • Experience</p>
+          <div style="margin-top:14px;">
+            <a class="btn" href="destinations.html">Explore Destinations</a>
+          </div>
+        </div>
+        <div class="right">
+          Top Destinations
+        </div>
+      </section>
+
+      <section class="section" aria-labelledby="featured">
+        <h2 id="featured" style="margin-bottom:12px">Featured Destinations</h2>
+        <div class="grid">
+          <!-- Card 1 -->
+          <article class="card" aria-labelledby="aayodhyarammandir">
+            <a class="thumb" href="North India/ayodhyarammandir.html"><img src="./Images/North India/aayodhyarammandir/1.jfif" alt="Rajasthan palace"></a>
+            <h3 id="rj">Ram Mandir, Ayodhya (Uttar Pradesh)</h3>
+            <p>Magnificent temple dedicated to Lord Ram, symbolizing faith and cultural heritage.</p>
+            <div class="meta">
+              <span class="kv">Best months: Oct–Mar</span>
+              <a href="North India/ayodhyarammandir.html" style="text-decoration:none;color:var(--accent-2)">Read more →</a>
+            </div>
+          </article>
+
+          <!-- Card 2 -->
+          <article class="card" aria-labelledby="gatewayofindia">
+            <a class="thumb" href="West India/gatewayofindia.html"><img src="./Images/West India/gatewayofindiamumbai/1.jpg" alt="Goa beach"></a>
+            <h3 id="goa">Gateway of India, Mumbai (Maharashtra)</h3>
+            <p>Historic arch monument overlooking the Arabian Sea, built during British rule.</p>
+            <div class="meta">
+              <span class="kv">Best months: Nov–Feb</span>
+              <a href="West India/gatewayofindia.html" style="text-decoration:none;color:var(--accent-2)">Read more →</a>
+            </div>
+          </article>
+
+          <!-- Card 3 -->
+          <article class="card" aria-labelledby="ranofkutch">
+            <a class="thumb" href="./West India/ranofkutch.html"><img src="Images/West India/GreatRannOfKutch/1.jpg" alt="Kerala backwaters"></a>
+            <h3 id="kerala">Rann of Kutch, Gujarat</h3>
+            <p>Vast white salt desert famous for the Rann Utsav festival and beautiful sunsets.</p>
+            <div class="meta">
+              <span class="kv">Best months: Nov–Feb</span>
+              <a href="West India/ranofkutch.html" style="text-decoration:none;color:var(--accent-2)">Read more →</a>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="section" aria-labelledby="tips">
+        <h2 id="tips" style="margin-bottom: 16px;">Essential Travel Tips</h2>
+        <div class="tips-grid">
+          <div class="tip-card">
+            <span class="tip-icon">📅</span>
+            <h4>Plan Wisely</h4>
+            <p>Check local weather, seasonal festivals, and operating hours before booking destinations.</p>
+          </div>
+          <div class="tip-card">
+            <span class="tip-icon">🙏</span>
+            <h4>Respect Culture</h4>
+            <p>Dress modestly and follow local customs when visiting religious sites and heritage monuments.</p>
+          </div>
+          <div class="tip-card">
+            <span class="tip-icon">🚗</span>
+            <h4>Safe Mobility</h4>
+            <p>Use pre-booked taxis, government-approved guides, or popular ridesharing apps in major cities.</p>
+          </div>
+          <div class="tip-card">
+            <span class="tip-icon">💳</span>
+            <h4>Payments & UPI</h4>
+            <p>Carry some cash for local vendors, though digital UPI payments are widely accepted across most shops.</p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+
+    <footer>
+      <p>© <span id="year"></span> Incredible India — Tourist Guide. All rights reserved.</p>
+      <p style="margin-top: 5px; font-size: 0.9em; opacity: 0.85;">Developed by: <strong>Viraj Tilva</strong> | Email: <strong>tilvaviraj@gmail.com</strong></p>
+    </footer>
+  </div>
+
+  <script src="JS/script.js"></script>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

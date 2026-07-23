@@ -1,0 +1,24 @@
+# Operating System Files
+Thumbs.db
+Thumbs.db:encrypt
+ehthumbs.db
+desktop.ini
+.DS_Store
+
+# Editor / IDE Configurations
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.swp
+
+# Temporary and Lock Files
+*.tmp
+*.bak
+~$*.docx
+~$*.doc
+
+# Local Agent Workspace Configs (if any)
+.agents/

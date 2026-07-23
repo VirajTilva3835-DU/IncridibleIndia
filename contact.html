@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Incredible India — Tourist Guide</title>
+  <link rel="stylesheet" href="./CSS/style.css">
+  <style>
+    /* Inline error styling */
+    .error {
+      color: tomato;
+      font-size: 14px;
+      margin-top: 4px;
+      display: block;
+    }
+  </style>
+</head>
+<body>
+  <div class="site container">
+    <header>
+      <a class="brand" href="index.html">
+        <div class="logo"><img src="./Images/Logo/in.png" alt="Logo"></div>
+        <div>
+          <div class="site-title">Incredible India</div>
+          <div class="site-sub">Tourist Guide Web App</div>
+        </div>
+      </a>
+
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="destinations.html">Destinations</a></li>
+          <li><a href="planner.html">Trip Planner</a></li>
+          <li><a href="contact.html" class="active">Contact</a></li>
+        </ul>
+      </nav>
+
+      <!-- Theme Toggle Switch -->
+      <div class="theme-toggle">
+        <input type="checkbox" id="themeSwitch">
+        <label for="themeSwitch" class="switch"></label>
+      </div>
+    </header>
+
+    <main>
+      <section class="section">
+        <h1>Contact Us</h1>
+        <p style="color:var(--muted)">For inquiries, travel tips, or collaboration, fill the form below.</p>
+
+        <form id="contactForm" action="#" method="post" style="margin-top:12px">
+          <div class="form-grid">
+            <div>
+              <input type="text" name="name" id="name" placeholder="Full name">
+              <span class="error" id="nameError"></span>
+            </div>
+
+            <div>
+              <input type="text" name="email" id="email" placeholder="Email address">
+              <span class="error" id="emailError"></span>
+            </div>
+
+            <div>
+              <input type="text" name="subject" id="subject" placeholder="Subject">
+              <span class="error" id="subjectError"></span>
+            </div>
+
+            <div>
+              <input type="tel" name="phone" id="phone" placeholder="Phone (optional)">
+              <span class="error" id="phoneError"></span>
+            </div>
+
+            <div>
+              <textarea name="message" id="message" placeholder="Write your message..."></textarea>
+              <span class="error" id="messageError"></span>
+            </div>
+          </div>
+
+          <div style="margin-top:12px">
+            <button class="btn" type="submit">Send Message</button>
+          </div>
+        </form>
+
+        <div id="formAlert" style="margin-top:12px; font-weight:500;"></div>
+      </section>
+    </main>
+
+    <footer>
+      <p>© <span id="year"></span> Incredible India — Tourist Guide. All rights reserved.</p>
+      <p style="margin-top: 5px; font-size: 0.9em; opacity: 0.85;">Developed by: <strong>Viraj Tilva</strong> | Email: <strong>tilvaviraj@gmail.com</strong></p>
+    </footer>
+  </div>
+
+  <script src="./js/script.js"></script>
+  <!-- ✅ jQuery -->
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+  <script>
+    // Auto-update year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // ✅ Validation
+    $(document).ready(function() {
+      $('#contactForm').on('submit', function(e) {
+        e.preventDefault();
+        let isValid = true;
+
+        // Clear previous errors
+        $('.error').text('');
+        $('#formAlert').text('');
+
+        // Get values
+        const name = $('#name').val().trim();
+        const email = $('#email').val().trim();
+        const subject = $('#subject').val().trim();
+        const msg = $('#message').val().trim();
+        const emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,}$/i;
+
+        // Validation
+        if (name === "") {
+          $('#nameError').text("⚠️ Please enter your full name.");
+          isValid = false;
+        }
+
+        if (email === "") {
+          $('#emailError').text("⚠️ Email is required.");
+          isValid = false;
+        } else if (!emailPattern.test(email)) {
+          $('#emailError').text("⚠️ Enter a valid email address.");
+          isValid = false;
+        }
+
+        if (subject === "") {
+          $('#subjectError').text("⚠️ Please enter a subject.");
+          isValid = false;
+        }
+
+        if (msg === "") {
+          $('#messageError').text("⚠️ Message cannot be empty.");
+          isValid = false;
+        } else if (msg.length < 10) {
+          $('#messageError').text("⚠️ Message should be at least 10 characters.");
+          isValid = false;
+        }
+
+        // Final message
+        if (isValid) {
+          $('#formAlert').css('color', 'limegreen').text('✅ Message sent successfully!');
+          $('#contactForm')[0].reset();
+        } else {
+          $('#formAlert').css('color', 'tomato').text('⚠️ Please correct the highlighted errors.');
+        }
+      });
+    });
+  </script>
+</body>
+</html>
